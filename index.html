@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[HArch] Diff viewer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>[HArch] Diff viewer</header>
+
+<div class="file-controls">
+  <label class="file-label" for="file1">Выбрать файл 1</label>
+  <input type="file" id="file1" />
+  <span class="filename" id="filename1">Файл 1 не выбран</span>
+  <label class="file-label" for="file2">Выбрать файл 2</label>
+  <input type="file" id="file2" />
+  <span class="filename" id="filename2">Файл 2 не выбран</span>
+</div>
+
+<div id="container">
+  <div class="panel">
+    <h2>Файл 1</h2>
+    <div class="lines" id="lines1"></div>
+  </div>
+  <div class="panel">
+    <h2>Файл 2</h2>
+    <div class="lines" id="lines2"></div>
+  </div>
+</div>
+
+<div class="nav-buttons">
+  <button onclick="gotoDiff(-1)">↓</button>
+  <button onclick="gotoDiff(1)">↑</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/diff@5.1.0/dist/diff.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
